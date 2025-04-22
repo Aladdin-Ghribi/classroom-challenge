@@ -573,7 +573,7 @@ async function awardScore(points) {
 }
 
 async function awardBonus() {
-  if (isFrozen) return;
+  // if (isFrozen) return;
   try {
     await fetch(`/teams/${currentTeam.id}/bonus`, {
       method: 'POST',
