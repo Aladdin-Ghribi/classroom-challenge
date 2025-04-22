@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Classroom Challenge</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="main-menu">
+    <div class="card" id="student-management">
+      <h2>إدارة الطلاب<br><span>Student Management</span></h2>
+      <input type="text" id="student-name" placeholder="اسم الطالب">
+      <input type="text" id="student-uni-id" placeholder="رقم الجامعة">
+      <div class="button-group">
+        <button onclick="addStudent()">إضافة طالب</button>
+        <button onclick="addStudentPoints()">إضافة نقاط</button>
+      </div>
+      <input type="number" id="student-points" placeholder="نقاط للطالب">
+      <ul id="student-list"></ul>
+    </div>
+    <div class="card" id="team-management">
+      <h2>إدارة الفرق<br><span>Team Management</span></h2>
+      <input type="text" id="team-name" placeholder="اسم الفريق">
+      <div id="team-members-checkboxes"></div>
+      <div class="button-group">
+        <button onclick="createTeam()">إنشاء فريق</button>
+        <button onclick="addTeamPoints()">إضافة نقاط</button>
+      </div>
+      <input type="number" id="team-points" placeholder="نقاط للفريق">
+      <ul id="team-list"></ul>
+    </div>
+    <div class="card" id="question-bank">
+      <h2>بنك الأسئلة<br><span>Question Bank</span></h2>
+      <textarea id="question-text" placeholder="السؤال"></textarea>
+      <select id="question-type">
+        <option value="mcq">اختيار متعدد</option>
+        <option value="open">سؤال مفتوح</option>
+      </select>
+      <input type="text" id="mcq-options" placeholder="خيارات (مفصولة بفواصل)">
+      <input type="text" id="question-answer" placeholder="الإجابة">
+      <button onclick="addQuestion()">إضافة سؤال</button>
+      <ul id="question-list"></ul>
+    </div>
+    <button id="go-to-game">الذهاب إلى اللعبة<br><span>Go to Game</span></button>
+  </div>
+  <div id="game-screen" style="display: none;">
+    <h1>شاشة اللعب<br><span>Game Screen</span></h1>
+    <div id="team-picker"></div>
+    <div id="student-picker"></div>
+    <div id="question-wrapper">
+      <div id="current-question"></div>
+      <div class="mcq-options"></div>
+    </div>
+    <div id="timer"></div>
+    <div class="button-group">
+      <button id="start-game-btn" onclick="startGame()">بدء اللعبة</button>
+      <button onclick="pauseGame()">إيقاف مؤقت</button>
+      <button onclick="nextRound()">الجولة التالية</button>
+      <button onclick="resetScores()">إعادة تعيين النقاط</button>
+      <button id="bonus-point" onclick="awardBonus()">نقطة إضافية</button>
+      <button onclick="backToMenu()">رجوع إلى القائمة</button>
+    </div>
+    <div id="score-buttons"></div>
+    <div id="leaderboard-teams"></div>
+    <div id="leaderboard-students"></div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

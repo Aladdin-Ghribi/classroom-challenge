@@ -1,0 +1,13 @@
+{
+  "name": "classroom-challenge",
+  "version": "1.0.0",
+  "description": "Educational game for classroom engagement",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "sqlite3": "^5.0.2"
+  }
+}
